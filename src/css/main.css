@@ -1,0 +1,475 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: 'Open Sans', sans-serif; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+.upper {
+  text-transform: uppercase; }
+
+.italic {
+  font-style: italic; }
+
+.bold {
+  font-weight: 800; }
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   @FONT-FACE
+   ========================================================================== */
+@font-face {
+  font-family: 'pretendoregular';
+  src: url("../fonts/pretendo-webfont.eot");
+  src: url("../fonts/pretendo-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pretendo-webfont.woff2") format("woff2"), url("../fonts/pretendo-webfont.woff") format("woff"), url("../fonts/pretendo-webfont.ttf") format("truetype"), url("../fonts/pretendo-webfont.svg#pretendoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.nintendo-font {
+  font-family: 'pretendoregular'; }
+
+.container {
+  width: 100%; }
+  .container .gameboy {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    background: #bebebe;
+    border-bottom-right-radius: 15% !important;
+    -webkit-border-radius: 2.5%;
+    -moz-border-radius: 2.5%;
+    border-radius: 2.5%;
+    position: relative;
+    border: 1px solid grey; }
+    .container .gameboy .leftline {
+      width: 5px;
+      height: 5%;
+      position: absolute;
+      background: #808080;
+      left: 10%;
+      top: 0; }
+    .container .gameboy .rightline {
+      width: 5px;
+      height: 5%;
+      position: absolute;
+      background: #808080;
+      right: 10%;
+      top: 0; }
+    .container .gameboy .topline {
+      position: absolute;
+      top: 5%;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      background: #808080; }
+    .container .gameboy .screencontainer {
+      position: absolute;
+      width: 80%;
+      left: 10%;
+      height: 250px;
+      background: #808080;
+      top: 10%;
+      border-radius: 2.5%;
+      border-bottom-right-radius: 15% !important; }
+      .container .gameboy .screencontainer .leftredline, .container .gameboy .screencontainer .leftblueline {
+        width: 25%;
+        height: 3px;
+        left: 2.5%;
+        position: absolute; }
+      .container .gameboy .screencontainer .rightredline, .container .gameboy .screencontainer .rightblueline {
+        width: 15%;
+        height: 3px;
+        right: 2.5%;
+        position: absolute; }
+      .container .gameboy .screencontainer .leftredline, .container .gameboy .screencontainer .rightredline {
+        background: #812f63;
+        top: 3%; }
+      .container .gameboy .screencontainer .leftblueline, .container .gameboy .screencontainer .rightblueline {
+        top: 6%;
+        background: #333399; }
+      .container .gameboy .screencontainer .text {
+        float: left;
+        position: absolute;
+        width: 55%;
+        left: 27.5%;
+        top: 2%;
+        text-transform: uppercase;
+        color: darkgrey;
+        font-size: 10px;
+        text-align: center; }
+      .container .gameboy .screencontainer .screen {
+        position: absolute;
+        width: 65%;
+        background: #9bbc0f;
+        border: 2px solid black;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        height: 200px;
+        left: 17.5%;
+        top: 27px; }
+      .container .gameboy .screencontainer .battery {
+        position: absolute;
+        top: 25%;
+        width: 17.5%;
+        text-align: center; }
+        .container .gameboy .screencontainer .battery .light {
+          height: 10px;
+          width: 10px;
+          background: red;
+          border-radius: 50%;
+          margin: 0 auto;
+          -webkit-animation: light 1s infinite linear;
+          -o-animation: light 1s infinite linear;
+          animation: light 1s infinite linear; }
+@-webkit-keyframes light {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .container .gameboy .screencontainer .battery p {
+          font-size: 0.5em;
+          color: white;
+          margin-top: 0;
+          text-transform: uppercase; }
+    .container .gameboy .title {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      color: #333399; }
+      .container .gameboy .title p {
+        font-weight: 800; }
+        .container .gameboy .title p .GB {
+          font-size: 24px;
+          font-style: italic;
+          font-weight: 700; }
+        .container .gameboy .title p .TM {
+          font-size: 12px; }
+    .container .gameboy .cross {
+      position: absolute;
+      top: 67.5%;
+      left: 10%; }
+      .container .gameboy .cross .horizontal {
+        width: 70px;
+        height: 20px;
+        background: black;
+        box-shadow: 1px 1px 1px black; }
+      .container .gameboy .cross .vertical {
+        width: 20px;
+        height: 70px;
+        margin-top: -44px;
+        margin-left: 25px;
+        background: black;
+        box-shadow: 1px 1px 1px black;
+        -moz-box-shadow: 1px 1px 1px black; }
+    .container .gameboy .button {
+      position: absolute;
+      top: 65%;
+      left: 65%;
+      text-align: center;
+      -ms-transform: rotate(-20deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-20deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-20deg); }
+      .container .gameboy .button .A-button, .container .gameboy .button .B-button {
+        float: left;
+        color: #333399;
+        font-weight: 800;
+        width: 60px; }
+        .container .gameboy .button .A-button .circle, .container .gameboy .button .B-button .circle {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: #812f63;
+          box-shadow: 1px 1px 1px black;
+          -moz-box-shadow: 1px 1px 1px black;
+          transition: all 0.5s ease; }
+          .container .gameboy .button .A-button .circle:hover, .container .gameboy .button .B-button .circle:hover {
+            box-shadow: none !important; }
+        .container .gameboy .button .A-button p, .container .gameboy .button .B-button p {
+          margin-top: 0;
+          width: 40px; }
+    .container .gameboy .selectbuttons {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      width: 25%;
+      margin-left: -25%;
+      -ms-transform: rotate(-25deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-25deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-25deg); }
+      .container .gameboy .selectbuttons .select {
+        float: left;
+        margin-left: 10px;
+        text-align: center; }
+        .container .gameboy .selectbuttons .select .line {
+          background: #808080;
+          height: 10px;
+          border-radius: 5px;
+          width: 50px;
+          box-shadow: 1px 1px 1px black;
+          transition: all 0.5s ease; }
+          .container .gameboy .selectbuttons .select .line:hover {
+            box-shadow: none !important; }
+        .container .gameboy .selectbuttons .select p {
+          margin-top: 2px;
+          color: #333399;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 11px; }
+    .container .gameboy .startbuttons {
+      position: absolute;
+      top: 80%;
+      left: 60%;
+      width: 25%;
+      margin-left: -20%;
+      -ms-transform: rotate(-25deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-25deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-25deg); }
+      .container .gameboy .startbuttons .start {
+        float: left;
+        margin-left: 10px;
+        text-align: center; }
+        .container .gameboy .startbuttons .start .line {
+          background: #808080;
+          height: 10px;
+          border-radius: 5px;
+          width: 50px;
+          box-shadow: 1px 1px 1px black;
+          transition: all 0.5s ease; }
+          .container .gameboy .startbuttons .start .line:hover {
+            box-shadow: none !important; }
+        .container .gameboy .startbuttons .start p {
+          margin-top: 2px;
+          color: #333399;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 11px; }
+    .container .gameboy .bottomLines {
+      position: absolute;
+      top: 85%;
+      right: 10%;
+      -ms-transform: rotate(-25deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-25deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-25deg); }
+      .container .gameboy .bottomLines .line {
+        height: 55px;
+        width: 7px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        background: #808080;
+        float: left;
+        margin-right: 10px;
+        box-shadow: 1px 1px 1px black; }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ */
+.hidden {
+  display: none !important; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                      http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+/*# sourceMappingURL=main.css.map */
